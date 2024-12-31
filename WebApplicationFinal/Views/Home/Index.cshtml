@@ -1,0 +1,141 @@
+﻿@{
+    ViewBag.Title = "Welcome to Our Modern App";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJv3sL1/NF6EN3Ax1pQF5UtiLgZV5qE0ll1g8R6mFw5Qt0P3kTT0UDEU0zvF" crossorigin="anonymous">
+    <style>
+        /* Custom styles for modern aesthetics */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            color: #333;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        h2 {
+            color: #495057;
+            font-size: 1.75rem;
+        }
+
+        .section-header {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #343a40;
+            text-align: center;
+        }
+
+        .lead {
+            font-size: 1.25rem;
+            color: #6c757d;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary, .btn-outline-dark {
+            border-radius: 25px;
+        }
+
+            .btn-primary:hover, .btn-outline-dark:hover {
+                background-color: #007bff;
+                color: white;
+            }
+
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+            .card:hover {
+                transform: translateY(-5px);
+            }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main class="container py-5">
+        <!-- Hero Section -->
+        <section class="text-center mb-5">
+            <h1>@ViewBag.Title</h1>
+            <p class="lead">Become a potential tenant! Get a home for you and your family! Manage your property with our systems!</p>
+            <p><a href="#features" class="btn btn-primary btn-lg">Explore Features</a></p>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://www.apartments.com/blog/sites/default/files/styles/large/public/image/2023-06/ParkLine-apartment-in-Miami-FL.jpg.webp?itok=wuPUc6GK" class="card-img-top" alt="Explore Libraries">
+                    <div class="card-body">
+                        <h5 class="card-title">For Managers</h5>
+                        <p class="card-text">Login through this app to manage the properties. Appointments ad mesages can be delivered to the tenants you oversee and more!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://jscoabode.com/wp-content/uploads/2021/02/NE-Street-View-1536x1008.jpg" class="card-img-top" alt="Explore Libraries">
+                    <div class="card-body">
+                        <h5 class="card-title">To Apartment Owners</h5>
+                        <p class="card-text">Consider applying our application to your buildings! With just a few managers to run inbetween we promise easy and inituitive systems to manage your properties.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://www.trulia.com/pictures/thumbs_5/zillowstatic/fp/ae0fe286e6175e5e5e338f86d8136f44-f_b.webp" class="card-img-top" alt="Explore Libraries">
+                    <div class="card-body">
+                        <h5 class="card-title">To People looking to get an Apartment</h5>
+                        <p class="card-text">Consider applying with our system! We can ensure that if you live in a complex using our system you'll have easy access to communication with staff and potential buildings'.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 MyApp. All rights reserved.</p>
+        <p>Made with ❤️ in Canada</p>
+    </footer>
+
+    <!-- Bootstrap JS and JQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-9aAZAX82dI9SxA7zyv2UnFyyaxBG1rfbLcoS5lbyk5E7H05FJHHc5KhG/K06E8gH" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Example of interactivity with JQuery
+        $(document).ready(function () {
+            $(".btn").hover(function () {
+                $(this).addClass("shadow-lg");
+            }, function () {
+                $(this).removeClass("shadow-lg");
+            });
+        });
+    </script>
+</body>
+</html>

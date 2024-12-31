@@ -1,0 +1,82 @@
+﻿@model IEnumerable<WebApplicationFinal.Models.Leas>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<!-- Only display the "Create New" button if the user is not a tenant-->
+@if (Session["UserType"]?.ToString() != "Tenant")
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
+
+<!-- Dropdown filter for status -->
+<form method="get" action="@Url.Action("Index", "Leas")">
+    <label for="statusFilter">Filter by Status:</label>
+    <select id="statusFilter" name="statusFilter" onchange="this.form.submit()">
+        <option value="">-- All --</option>
+        <option value="1" @(ViewBag.StatusFilter?.ToString() == "1" ? "selected" : "")>Open</option>
+        <option value="2" @(ViewBag.StatusFilter?.ToString() == "2" ? "selected" : "")>Close</option>
+    </select>
+</form>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apartment.ApartmentNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status1.StatusName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tenant.FirstName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apartment.ApartmentNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status1.StatusName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tenant.FirstName)
+            </td>
+            <td>
+                <!-- Only show Edit/Delete buttons if the user is not a tenant -->
+                @if (Session["UserType"]?.ToString() != "Tenant")
+                {
+                    <span>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.LeaseId }) | |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.LeaseId })
+                    </span>
+                }
+                <!-- Always show the Details button -->
+                @Html.ActionLink("Details", "Details", new { id = item.LeaseId }) 
+               
+            </td>
+        </tr>
+    }
+
+</table>

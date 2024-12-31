@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WebApplicationFinal.Models.Message>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Message1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateSent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyManager.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyManager1.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tenant.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tenant1.FirstName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateSent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyManager.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyManager1.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tenant.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tenant1.FirstName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MessageId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MessageId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MessageId })
+        </td>
+    </tr>
+}
+
+</table>

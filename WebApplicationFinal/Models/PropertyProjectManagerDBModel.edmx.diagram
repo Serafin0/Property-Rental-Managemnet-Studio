@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d5407009178f48669aa76a6b9a675e7a" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="PropertyProjectManagerModel.Apartment" Width="1.5" PointX="7.5" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyProjectManagerModel.Appointment" Width="1.5" PointX="5.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyProjectManagerModel.Building" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyProjectManagerModel.Leas" Width="1.5" PointX="10.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyProjectManagerModel.Message" Width="1.5" PointX="8.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyProjectManagerModel.Payment" Width="1.5" PointX="13" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyProjectManagerModel.PropertyManager" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyProjectManagerModel.PropertyOwner" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyProjectManagerModel.Report" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyProjectManagerModel.Status" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyProjectManagerModel.Tenant" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <AssociationConnector Association="PropertyProjectManagerModel.FK__Apartment__Build__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyProjectManagerModel.FK__Apartment__Manag__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyProjectManagerModel.FK__Apartment__Statu__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyProjectManagerModel.FK__Leases__Apartmen__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyProjectManagerModel.FK__Appointme__Manag__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyProjectManagerModel.FK__Appointme__Statu__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyProjectManagerModel.FK__Appointme__Tenan__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyProjectManagerModel.FK__Buildings__Landl__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyProjectManagerModel.FK__Buildings__Manag__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyProjectManagerModel.FK__Leases__Status__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyProjectManagerModel.FK__Leases__TenantId__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyProjectManagerModel.FK__Payments__LeaseI__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyProjectManagerModel.FK__Messages__Manage__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyProjectManagerModel.FK__Messages__Manage__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyProjectManagerModel.FK__Messages__Tenant__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyProjectManagerModel.FK__Messages__Tenant__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyProjectManagerModel.FK__Payments__Status__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyProjectManagerModel.FK__Payments__Tenant__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyProjectManagerModel.FK__PropertyM__Admin__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyProjectManagerModel.FK__Reports__Manager__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyProjectManagerModel.FK__Reports__AdminId__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyProjectManagerModel.FK__Tenants__AdminId__5EBF139D" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

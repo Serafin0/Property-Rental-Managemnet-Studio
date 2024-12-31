@@ -1,0 +1,89 @@
+﻿@model IEnumerable<WebApplicationFinal.Models.Apartment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<!-- Only display the "Create New" button if the user is not a tenant-->
+@if (Session["UserType"]?.ToString() != "Tenant")
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Bedroom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bathroom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Squarefeet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Building.BuildingName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyManager.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status1.StatusName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <!-- Check if the user is a tenant and if the apartment's status is "Close" -->
+        if (Session["UserType"]?.ToString() == "Tenant" && item.Status1.StatusId == 2)
+        {
+            <!-- Skip this apartment if the status is "Close" -->
+            continue;
+        }
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bedroom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bathroom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Squarefeet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Building.BuildingName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropertyManager.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status1.StatusName)
+            </td>
+            <td>
+                <!-- Only show Edit/Delete buttons if the user is not a tenant -->
+                @if (Session["UserType"]?.ToString() != "Tenant")
+                {
+                    <span>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ApartmentNumber }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ApartmentNumber })
+                    </span>
+                }
+                <!-- Always show the Details button -->
+                @Html.ActionLink("Details", "Details", new { id = item.ApartmentNumber })
+            </td>
+        </tr>
+    }
+
+</table>
